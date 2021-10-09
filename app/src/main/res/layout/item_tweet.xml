@@ -35,4 +35,16 @@
         android:layout_marginTop="2dp"
         android:layout_toEndOf="@+id/ivProfileImage"
         tools:text="This is my tweet!! yay!" />
+
+    <TextView
+        android:id="@+id/tvTimeStamp"
+        android:layout_width="18dp"
+        android:layout_height="16dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="332dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginEnd="2dp"
+        android:layout_toEndOf="@+id/ivProfileImage"
+        tools:text="3d" />
 </RelativeLayout>
