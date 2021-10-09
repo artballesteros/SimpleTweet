@@ -1,11 +1,21 @@
 package com.codepath.apps.restclienttemplate;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.util.Log;
 
+import com.codepath.apps.restclienttemplate.models.Tweet;
 import com.codepath.asynchttpclient.callback.JsonHttpResponseHandler;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import okhttp3.Headers;
 
@@ -14,11 +24,25 @@ public class TimelineActivity extends AppCompatActivity {
     public static final String TAG = "TimeLineActivity";
 
     TwitterClient client;
+    RecyclerView rvTweets;
+    List<Tweet> tweets;
+    TweetsAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
+
+        // Find the recycler view
+        rvTweets = findViewById(R.id.rvTweets);
+
+        // initialize the list of tweets and adapter
+        tweets = new ArrayList<>();
+        adapter = new TweetsAdapter(tweets, this);
+
+        // recycler view setup: layout manager and adapter
+        rvTweets.setLayoutManager(new LinearLayoutManager(this));
+        rvTweets.setAdapter(adapter);
 
         client = TwitterApp.getRestClient(this);
         populateHomeTimeline();
@@ -26,8 +50,16 @@ public class TimelineActivity extends AppCompatActivity {
 
     private void populateHomeTimeline() {
         client.getHomeTimeLine(new JsonHttpResponseHandler() {
+            @SuppressLint("NotifyDataSetChanged")
             @Override
             public void onSuccess(int statusCode, Headers headers, JSON json) {
+                JSONArray jsonArray = json.jsonArray;
+                try {
+                    tweets.addAll(Tweet.fromJsonArray(jsonArray));
+                    adapter.notifyDataSetChanged();
+                } catch (JSONException e) {
+                    Log.e(TAG, "onSuccess: failed to capture jsonArray into List<Tweet> tweets", e);
+                }
                 Log.i(TAG, "onSuccess" + json.toString());
             }
 
