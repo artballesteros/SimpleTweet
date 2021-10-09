@@ -33,7 +33,7 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='images/demonstration.gif' title='Gif Walkthrough' width='' alt='Gif Walkthrough' />
+<img src='images/demonstration.gif' title='Gif Walkthrough' width=400 alt='Gif Walkthrough' />
 
 GIF created with Android Studio.
 
