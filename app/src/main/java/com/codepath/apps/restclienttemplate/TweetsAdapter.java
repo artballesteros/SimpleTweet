@@ -1,5 +1,6 @@
 package com.codepath.apps.restclienttemplate;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -48,6 +49,20 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     @Override
     public int getItemCount() {
         return tweets.size();
+    }
+
+    // clean all elements of the recycler
+    @SuppressLint("NotifyDataSetChanged")
+    public void clear() {
+        tweets.clear();
+        notifyDataSetChanged();
+    }
+
+    // add a list of items
+    @SuppressLint("NotifyDataSetChanged")
+    public void addAll(List<Tweet> list) {
+        tweets.addAll(list);
+        notifyDataSetChanged();
     }
 
     // define a viewholder
