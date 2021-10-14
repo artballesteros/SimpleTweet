@@ -1,5 +1,6 @@
 package com.codepath.apps.restclienttemplate;
 
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -7,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
@@ -119,6 +121,8 @@ public class TimelineActivity extends AppCompatActivity {
         if (item.getItemId() == R.id.compose) {
             // compose icon is tapped
             // navigate to compose activity
+            Intent intent = new Intent(TimelineActivity.this, ComposeActivity.class);
+            startActivity(intent);
             return true;
         }
 
