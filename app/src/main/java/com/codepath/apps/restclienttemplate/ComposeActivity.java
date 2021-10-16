@@ -84,7 +84,7 @@ public class ComposeActivity extends AppCompatActivity {
                     return;
                 }
 
-                Toast.makeText(ComposeActivity.this, tweetContent, Toast.LENGTH_LONG).show();
+                Toast.makeText(ComposeActivity.this, "Posted!", Toast.LENGTH_SHORT).show();
                 // make api call to Twitter to publish the Tweet
                 client.publishTweet(tweetContent, new JsonHttpResponseHandler() {
                     @Override

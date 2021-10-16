@@ -29,7 +29,7 @@ The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
 
-## Gif Walkthrough
+## gif walkthrough
 
 Here's a walkthrough of implemented user stories:
 
@@ -77,7 +77,7 @@ The following **required** functionality is completed:
   - [x] User can then enter a new tweet and post this to twitter
   - [x] User is taken back to home timeline with **new tweet visible** in timeline
   - [x] Newly created tweet should be manually inserted into the timeline and not rely on a full refresh
-  - [ ] User can **see a counter with total number of characters left for tweet** on compose tweet page
+  - [x] User can **see a counter with total number of characters left for tweet** on compose tweet page
 
 The following **optional** features are implemented:
 
@@ -95,11 +95,11 @@ The following **additional** features are implemented:
 
 - [ ] List anything else that you can get done to improve the app functionality!
 
-## Video Walkthrough
+## GIF Walkthrough
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Walkthrough' width='400' alt='Walkthrough' />
+<img src='images/demonstration2.gif' title='Walkthrough' width='400' alt='Walkthrough' />
 
 GIF created with Android Studio.
 
